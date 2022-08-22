@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import register from '../controllers/register.controller.js'
+import login from '../controllers/login.controller.js'
 
 const router = new Router()
 
@@ -9,6 +10,7 @@ router.post('/register', register)
 
 // login
 // http://localhost/api/auth/login
+router.post('/login', login)
 
 // get me
 // http://localhost/api/auth/me
