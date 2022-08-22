@@ -12,7 +12,7 @@ const register = async (req, res) => {
 		const { firstName, lastName, email, password, avatar } = req.body
 		const emailUsed = await User.findOne({ email })
 		if (emailUsed) {
-			return res.json({ message: 'Този email вече се изплзва.' })
+			return res.status(400).json({ message: 'Този email вече се изплзва.' })
 		}
 
 		const salt = bcrypt.genSaltSync(10)
@@ -43,7 +43,7 @@ const register = async (req, res) => {
 			message: 'Регистрацията е успешна.',
 		})
 	} catch (e) {
-		res.json({ message: 'Неуспешна регистрация.' })
+		res.status(400).json({ message: 'Неуспешна регистрация.' })
 	}
 }
 

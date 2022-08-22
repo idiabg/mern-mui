@@ -15,12 +15,12 @@ export default (req, res, next) => {
 			next()
 		} catch (error) {
 			return res.json({
-				message: 'Нет доступа.',
+				message: 'Нямате достъп.',
 			})
 		}
 	} else {
 		return res.json({
-			message: 'Нет доступа.',
+			message: 'Нямате достъп.',
 		})
 	}
 }
